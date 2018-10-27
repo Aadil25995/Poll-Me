@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+  {% if edit_mode %}
+    <h1 class="text-center">Edit Choice</h1>
+  {% else %}
+    <h1 class ="text-center">Add a Choice</h1>
+  {% endif %}
+  <div class="row">
+    <div class="col-sm-6 offset-sm-3">
+      <form action="" method="post">
+        {% csrf_token %}
+        {% for field in form %}
+          <div class="form-group">
+            {{ field.errors }}
+            {{ field.label_tag }}
+            {{ field }}
+          </div>
+        {% endfor %}
+        <input type="submit" class="btn btn-primary" value="Submit"/>
+        {% if edit_mode %}
+          <a role='button' role='button' class='btn btn-danger' href = "{% url 'polls:choice_confirm_delete' choice.id %}"><i class="fas fa-trash-alt "></i> Delete Choice </a>
+        {% endif %}
+      </form>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

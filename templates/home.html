@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block custom_css %}
+
+  <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
+{% endblock %}
+
+{% block content %}
+  <div class="container text-center">
+    <div class="row">
+      <div class="col">
+        <div id='Home-content'>
+            <h1>Poll Me</h1>
+            <h3 >"Make Your Vote Count"</h3>
+            <hr>
+            {% if user.is_authenticated %}
+              <a role='button' href="{% url 'polls:list' %}" class='btn btn-light btn-lg' id="vote-btn">Vote</a>
+            {% else %}
+              <a role='button' href="{% url 'accounts:login' %}" class='btn btn-light btn-lg' id="start-btn">Get Started</a>
+            {% endif %}
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

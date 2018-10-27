@@ -1,0 +1,26 @@
+h1,h3 {
+  color: white;
+}
+
+body {
+  width: auto;
+  height:auto;
+  background: linear-gradient(to right, rgba(211,211,211,0.2), rgba(211,211,211,0.2)),url("../img/mikael-kristenson-242070-unsplash.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  filter: alpha(Opacity=100);
+  color: yellow;
+}
+
+#home-content{
+  margin-top:100px;
+  text-align: center;
+  padding-top: 20%;
+}
+
+a {
+  border-color: red;
+  border-width: 5px;
+}
